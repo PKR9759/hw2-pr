@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <style>
+        body {
+            margin:0;padding:0;
+            background-color: #f49644;
+            
+            /* justify-content: center; */
+           
+        }
+        .container {
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            
+            margin :0;
+            padding: 0;
+        }
+        .cont{
+            /* display: flex; */
+
+            /* justify-content: center;
+            flex-direction: column;  */
+            border:solid black;
+            margin :auto;
+            width:500px;
+            background-color: white;
+            margin-left:20px;
+        }
+        .contform form{
+            
+            
+
+        }
+        
+    </style>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <iframe  class="inc"  style=" border:none;"src="navbar.html" width="100%" height="80px"></iframe>
+        <div class="container">
+            <div class="cont">
+                <h2>FEEDBACK</h2>
+                <p>Feel free to give Feedback about Website</p>
+
+                <div class="contform">
+                    <form method="get" width="60%" autocomplete="on">
+                        <label for="fname">First Name :</label>
+                        <input type="text" id="fname" name="fname"
+                            placeholder="Enter your first name">
+                        <br><br>
+                        <label for="lname">Last Name :</label>
+                        <input type="text" id="lname" name="lname"
+                            placeholder="Enter your Last name">
+                        <br><br>
+                        <label for="email">E-Mail Address : </label>
+
+                        <input type="text" maxlength="200" id="lname"
+                            name="lname"
+                            name="lname" placeholder="Enter your Email">
+
+                        <br><br>
+                        <label for="feedback">FeedBack :</label><br>
+                        <textarea name="feedback" rows="8" cols="50"
+                            placeholder="give your valuable feddback here"></textarea>
+
+                        <br><br>
+                        <label for="suggestion">Suggestion :</label><br>
+                        <textarea name="suggestion" rows="8" cols="50"
+                            placeholder="give your valuable Suggestion here"></textarea>
+                        <br><br>
+                        <p>How Is my Website?</p>
+
+                        <label for="rd1"><input type="radio" name="rd" id="rd">Very
+                            Nice
+                        </label><br>
+                        <label for="rd2"><input type="radio" name="rd" id="rd">Nice</label><br>
+                        <label for="rd3"><input type="radio" name="rd" id="rd">Good</label><br>
+                        <label for="rd4"><input type="radio" name="rd" id="rd">Delightful</label><br>
+                        <label for="rd5"><input type="radio" name="rd" id="rd">Productive</label><br>
+                        <label for="rd6"><input type="radio" name="rd" id="rd">Need
+                            to
+                            Upgrade</label><br>
+                        <br><br>
+                        <input type="reset" name="reset" id="reset">
+                        <input type="submit" value="Submit" title="submit your
+                            feedback">
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
