@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap
+            ||Audiowide&Righteous&display&Alfa+Slab+One&Titan+One&display" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .cont {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 50px;
+            width: 80%;
+            border-radius: 7px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 40%;
+            /* height: 100%; */
+            background-color: rgb(216, 144, 49);
+            background-size: cover;
+        }
+        
+        .left img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        .left h2 {
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .left p {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .left ul {
+            display: flex;
+            justify-content: center;
+            margin: 20px 2px 0px 0px;
+        }
+        
+        .left i {
+            font-size: 24px;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: #e5d3d3;
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .right {
+            border-radius: 7px;
+            width: 100%;
+            max-width: 500px;
+            padding: 0px 0px 20px 0px;
+            height: 100%;
+            margin: 0;
+        }
+        
+        .head {
+            padding: 0;
+            margin: 0px 0px 40px 0px;
+            text-align: center;
+            font-family: 'Acme', sans-serif;
+            font-size: 25px;
+        }
+        
+        form {
+            border-radius: 10px;
+            padding: 30px;
+        }
+        
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            /* margin-bottom: 20px; */
+            font-size: 16px;
+            border: none;
+            border-radius: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        
+        input[type='submit'],
+        input[type='reset'] {
+            color: #fff;
+            background-color: #f49644;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            width: 30%;
+            margin: 7% 0px 0px 6%;
+        }
+        
+        input[type='submit']:hover,
+        input[type='reset']:hover {
+            background-color: #cf7c34;
+        }
+        
+        .btn {
+            display: flex;
+            justify-content: center;
+        }
+        
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border: 2px solid #f49644;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact form</title>
+</head>
+
+<body>
+    <div class="cont">
+
+
+
+
+        <div class="left">
+            <img src="" alt="logo">
+            <h2>Stay Connected With me</h2>
+            <p>Stay connected with us to keep up-to-date with our latest news, promotions, and events! Follow us on social media, subscribe to our newsletter, or reach out to us via email or phone. We're always happy to chat and answer any questions you
+                may have. Thanks for choosing us, and we can't wait to hear from you!
+
+
+
+            </p>
+            <ul>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-solid fa-hashtag"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </ul>
+        </div>
+
+
+
+
+        <div class="right">
+
+
+            <form method="POST">
+                <div class="head">
+                    <h2>Contact Me</h2>
+                </div>
+                <input type="text" name="fname" id="fname" placeholder="First Name">
+                <br><br>
+
+                <input type="text" name="lname" id="lname" placeholder="Last Name">
+                <br><br>
+
+                <input length="10" type="tel" name="mnumber" id="mnumber" placeholder="Mobile Number">
+
+                <br><br>
+
+                <input type="text" name="email" id="email" placeholder="E-mail Address ">
+                <br><br>
+
+                <textarea name="message" id="message" style="padding:7px" placeholder="Message :" rows="9" cols="40"></textarea>
+                <br><br>
+                <div class="btn">
+
+                    <input type="reset" name="reset" id="reset">
+                    <input type="submit" value="Send" title="submit your feedback">
+                </div>
+                <br><br>
+            </form>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

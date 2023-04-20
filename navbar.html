@@ -1,120 +1,151 @@
-
-
 <!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <style>
-        body{
+
+<head>
+    <style>
+        body {
             margin: 0;
             padding: 0;
-
-            opacity:0.5;
+            opacity: 0.5;
         }
-        .cont{
-            display:flex;
+        
+        .cont {
+            display: flex;
             justify-content: space-between;
-            margin:0;
-            padding:4px;
+            margin: 0;
+            padding: 4px;
             background-color: white;
             color: black;
-            
         }
-        .logoname{
-          display:flex;
-          padding:10px;
-          
+        
+        .logoname {
+            display: flex;
+            padding: 10px;
         }
-        .logoname i{
-            height:35px;
-            margin-right:10px;
-
+        
+        .logoname i {
+            height: 35px;
+            margin-right: 10px;
         }
-        .logoname p{
+        
+        .logoname p {
             font-family: 'Tilt Prism', cursive;
-            font-size:30px;
-            font-weight:600;
-            margin:0;
-            padding:0;
+            font-size: 30px;
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
         }
-        .menu{
-            display:flex;
-            margin-top:20px;
-            
+        
+        .menu {
+            display: flex;
+            margin-top: 20px;
         }
+        
         .menu ul {
             display: flex;
             margin: 0px;
             font-family: 'Titan One', cursive;
-            font-size:25px;
-            padding:0;
+            font-size: 25px;
+            padding: 0;
             float: right;
             list-style: none;
-          
-            
-        }
-        .menu li{
-            display:inline;
-            margin:0px 20px 0px   0px;
-            
         }
         
-        .menu a{
-            margin:0;
-            padding:0;
+        .menu li {
+            display: inline;
+            margin: 0px 20px 0px 0px;
+        }
+        
+        .menu a {
+            margin: 0;
+            padding: 0;
             text-decoration: none;
             /* text-align: center; */
             color: black;
-            
-           
-        }
-        .menu a:hover{
-            /* //color:black;
-            //background-color: white; */
-            text-decoration:underline;
-            text-decoration-color:black;
-            text-decoration-thickness: 3px;
-           
-            
         }
         
-       
+        .menu a:hover {
+            /* //color:black;
+            //background-color: white; */
+            text-decoration: underline;
+            text-decoration-color: black;
+            text-decoration-thickness: 3px;
+        }
+        
+        .dropd {
+            display: none;
+            position: absolute;
+        }
+        
+        .dropd li {
+            list-style: none;
+            outline: 2px solid black;
+            margin: 0;
+            padding: 0;
+            flex-direction: column;
+            background-color: #ea8730;
+            color: aliceblue;
+        }
     </style>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap
-            ||Audiowide&Righteous&display&Alfa+Slab+One&Titan+One&display"
-            rel="stylesheet">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <div class="cont">
-            <div class="logoname">
-                <i class="fa-sharp fa-solid fa-music fa-3x"></i>
-                <p>Music</p>
-            </div>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap
+            ||Audiowide&Righteous&display&Alfa+Slab+One&Titan+One&display" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-            <div class="menu">
-                <ul>
-                    <li><a href="/rbh/home.php">Home</a></li>
-                    <li><a href="/rbh/home.php">Catagory</a></li>
-                    <li><a href="/rbh/home.php">Locations</a></li>
-                    <li><a href="/rbh/home.php">Feedback</a></li>
-                    <li><a href="/rbh/home.php">About</a></li>
-                    <li><a href="/rbh/home.php">more</a></li>
-                </ul>
-            </div>
-        </div>
-        <div >
-
+<body>
+    <div class="cont">
+        <div class="logoname">
+            <i class="fa-sharp fa-solid fa-music fa-3x"></i>
+            <p>Music</p>
         </div>
 
+        <div class="menu">
+            <ul>
+                <li><a href="/proj/">Home</a></li>
+                <li><a href="/rbh/home.php">Catagory</a></li>
+                <li><a href="#" class="loc">Locations
+                    <div class="dropd">
+                    <ul>
+                        <li>Your Position</li>
+                        <li>My Position</li>
+                    </ul>
+                    </div>
+                </a></li>
+                <li><a href="/rbh/home.php">Feedback</a></li>
+                <li><a href="/rbh/home.php">About</a></li>
+                <li><a href="/rbh/home.php">more</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+
+    </div>
 
 
 
-        <script src="https://kit.fontawesome.com/53cda3bc09.js"
-            crossorigin="anonymous"></script>
 
-    </body>
+    <script src="https://kit.fontawesome.com/53cda3bc09.js" crossorigin="anonymous"></script>
+
+
+    <script>
+        let l = document.querySelector('.loc');
+        let dropdown = document.querySelector('.dropd');
+        l.addEventListener('mouseover', () => {
+            setTimeout(() => {
+                dropdown.style.display = 'flex';
+            }, 500);
+        })
+        l.addEventListener('mouseout', () => {
+            setTimeout(() => {
+                dropdown.style.display = 'none';
+            }, 500);
+        })
+    </script>
+
+</body>
+
 </html>
