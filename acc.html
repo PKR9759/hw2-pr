@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .accordion {
+            display:flex;
+            justify-content:center;
+            flex-direction:column;
+
+        }
+        .btn{
+            width: 100%;
+            overflow: hidden;
+            text-align: left;
+            background-color:grey;
+            margin:2px;
+            padding:20px;
+        }
+        .detail {
+         display: none;
+         
+        }
+        .extra{
+          display: block;  
+
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="accordition">
+        <buttton class="btn">s1</buttton>
+        <div class="detail">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum quis vitae ad enim accusantium placeat tempora vero reprehenderit alias aperiam. Rerum, illum omnis. Ducimus iste architecto error commodi quod optio.
+            </p>
+            </div>
+        <buttton class="btn">s1</buttton>
+        <div class="detail">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum quis vitae ad enim accusantium placeat tempora vero reprehenderit alias aperiam. Rerum, illum omnis. Ducimus iste architecto error commodi quod optio.
+            </p>
+            </div>
+        <buttton class="btn">s1</buttton>
+        <div class="detail">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum quis vitae ad enim accusantium placeat tempora vero reprehenderit alias aperiam. Rerum, illum omnis. Ducimus iste architecto error commodi quod optio.
+            </p>
+            </div>
+
+
+    </div>
+<script>
+    let s=document.getElementByclassName("detail");
+
+
+    for(let i=0;i<s.length;i++){
+        s[i].addEventListener('click',()=>{
+            this.classList.toggle("extra");
+            let others=this.nextElementSibling;
+            if(others.style.dispaly=='none'){
+                others.style.dispaly='block';
+            }
+            else{
+                others.style.dispaly="none";
+            }
+        });
+    }
+</script>
+</body>
+</html>
