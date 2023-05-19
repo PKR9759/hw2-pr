@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Webpage Screenshot to PDF</h1>
+  <button id="screenshotBtn">Take Screenshot and Download as PDF</button>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="screenshot.js"></script>
+
+  <script>// function to take screenshot of the webpage
+    function takeScreenshot() {
+      // get the height and width of the webpage
+      const height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+      const width = Math.max(document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
+      
+      // create a canvas with the same height and width as the webpage
+      const canvas = document.createElement("canvas");
+      canvas.height = height;
+      canvas.width = width;
+      const context = canvas.getContext("2d");
+      
+      // draw the contents of the webpage on the canvas
+      context.drawWindow(window, 0, 0, width, height, "rgb(255,255,255)");
+      
+      // convert the canvas to a data URL containing a PNG image
+      const dataUrl = canvas.toDataURL("image/png");
+      
+      // return the data URL
+      return dataUrl;
+    }
+    
+    // function to download the PDF file
+    function downloadPdf(dataUrl) {
+      // create a new jsPDF instance
+      const pdf = new jsPDF();
+      
+      // add the image to the PDF
+      pdf.addImage(dataUrl, "PNG", 0, 0);
+      
+      // save the PDF file with a timestamp as the filename
+      const filename = "screenshot-" + new Date().getTime() + ".pdf";
+      pdf.save(filename);
+    }
+    
+    // add event listener to the button to take the screenshot and download the PDF
+    const screenshotBtn = document.getElementById("screenshotBtn");
+    screenshotBtn.addEventListener("click", function() {
+      // take the screenshot and download the PDF
+      const dataUrl = takeScreenshot();
+      downloadPdf(dataUrl);
+    });
+    </script>
+</body>
+</html>

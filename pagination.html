@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Article Cards Example</title>
+    <link rel="stylesheet" href="">
+</head>
+<style>
+    .cards-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 300px;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+    .card-text {
+        margin-bottom: 0;
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 32px;
+    }
+    .pagination a {
+        color: #333;
+        font-size: 16px;
+        padding: 8px;
+        text-decoration: none;
+        margin: 0 8px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .pagination a.active,
+    .pagination a:hover {
+        background-color: #333;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <div class="cards-container">
+        <div class="card">
+            <h2 class="card-title">The Benefits of Meditation</h2>
+            <p class="card-text">Meditation has been shown to reduce stress and anxiety, improve focus and
+                concentration, and increase feelings of well-being and happiness.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">The Importance of Exercise</h2>
+            <p class="card-text">Regular exercise can help improve cardiovascular health, increase muscle strength and
+                endurance, and promote overall physical and mental well-being.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">The Power of Positive Thinking</h2>
+            <p class="card-text">Positive thinking has been linked to better mental health, increased resilience, and
+                improved relationships with others.</p>
+        </div>
+        <div class="card">
+            <h2 class="card-title">The Benefits of Gratitude</h2>
+            <p class="card-text">Practicing gratitude has been linked to increased happiness, improved relationships,
+                and reduced symptoms of depression and anxiety.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">The Power of Mindfulness</h2>
+            <p class="card-text">Mindfulness can help reduce stress and anxiety, improve focus and concentration, and
+                promote overall well-being.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">The Benefits of Journaling</h2>
+            <p class="card-text">Journaling can help improve emotional regulation, promote self-reflection and
+                self-awareness, and reduce symptoms of depression and anxiety.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">The Importance of Self-Care</h2>
+            <p class="card-text">Self-care is essential for maintaining physical and mental health, with benefits
+                including increased resilience, improved relationships, and reduced stress.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">The Benefits of Volunteering</h2>
+            <p class="card-text">Volunteering can help improve mental health, increase social connections, and promote a
+                sense of purpose and meaning in life.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">The Power of Positive Relationships</h2>
+            <p class="card-text">Positive relationships can help improve mental health, increase resilience, and promote
+                overall well-being.</p>
+        </div>
+
+
+        <div class="card">
+            <h2 class="card-title">The Benefits of Exercise</h2>
+            <p class="card-text">Regular exercise has numerous benefits for both physical and mental health. It can help
+                reduce the risk of chronic diseases, such as heart disease, diabetes, and certain cancers, as well as
+                improve mood and cognitive function.</p>
+        </div>
+        <div class="card">
+            <h2 class="card-title">Tips for Better Sleep</h2>
+            <p class="card-text">Getting enough sleep is crucial for overall health and well-being. Here are some tips
+                to improve your sleep quality: stick to a consistent sleep schedule, create a relaxing bedtime routine,
+                avoid caffeine and alcohol before bedtime, and create a comfortable sleep environment.</p>
+        </div>
+        
+        <div class="pagination">
+            <a href="#" id='f' class="active">1</a>
+            <a href="#" id='s'>2</a>
+            <a href="#" id='t'>3</a>
+
+        </div>
+        <script>
+            const cards = document.querySelectorAll('.card'); // Select all cards
+            const cardsPerSection = Math.ceil(cards.length / 3); // Calculate number of cards per section
+            let currentSection = 1; // Current section number
+
+            // Function to show cards for a specific section
+            function showSection(sectionNumber) {
+                // Calculate start and end index for the current section
+                const startIndex = (sectionNumber - 1) * cardsPerSection;
+                const endIndex = startIndex + cardsPerSection;
+
+                // Hide all cards and show only the ones for the current section
+                for(let i=0;i<cards.length;i++) {
+                    if(i>= startIndex && i<endIndex){
+                        cards[i].style.display ='block';
+                    }
+                    else{
+                        cards[i].style.display ="none";
+                    }
+            }
+        }
+            // Show the first section initially
+            f.addEventListener('click', ()=>{
+                showSection(1);
+                f.classList.add('active');
+                s.classList.remove('active');
+                t.classList.remove('active');
+
+            });
+            s.addEventListener('click', ()=>{
+                showSection(2);
+                s.classList.add('active');
+                f.classList.remove('active');
+                t.classList.remove('active');
+            });
+            t.addEventListener('click', ()=>{
+                showSection(3);
+                t.classList.add('active');
+                s.classList.remove('active');
+                f.classList.remove('active');
+            });
+
+        </script>
+</body>
+
+</html>

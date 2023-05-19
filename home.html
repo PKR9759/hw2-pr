@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: aliceblue;
+            box-sizing: border-box;
+
+        }
+
+        .cont2 {
+            padding:100px;
+            display: flex;
+           background:rgba(0,0, 0, 0.6) url("https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwZGVza3xlbnwwfHwwfHw%3D&w=1000&q=80");
+            
+           background-blend-mode: darken;
+        }
+
+        .lft {
+            padding: 0;
+            float: left;
+            width: 60%;
+        }
+
+        .lft p {
+            margin-top: 20px;
+            margin: 0;
+            padding: 0;
+            margin-left: 20px;
+        }
+        #video{
+            width:400px;
+            height:auto;
+            /* border-radius: 50%; */
+            margin: 0;
+            padding: 0;
+        }
+        .p1 {
+            font-family: 'Righteous', cursive;
+            font-size: 50px;
+            color:#fff;
+            font-family: 'Alfa Slab One', cursive;
+        }
+
+        .p2{
+            font-size: 70px;
+            color: rgb(216, 144, 49);
+            font-family: 'Alfa Slab One', cursive;
+        }
+
+        .p3 {
+            margin-left: 20px;;
+            font-family: 'Righteous', cursive;
+            font-size: 20px;
+            color:#fff;
+
+        }
+        .p4{
+            font-family: 'Righteous', cursive;
+            font-size: 22px;
+            color:rgb(248, 241, 186);
+
+        }
+
+        .rgt {
+            float: right;
+            width: 40%;
+        }
+
+        .rgt img {
+            /* height:100%; */
+            width: 80%;
+            border-radius: 50%;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+    
+
+       
+
+        .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #e19b18;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .articles {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .nav{
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            /* opacity: 0.5; */
+        }
+
+        .cont {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 4px;
+            background-color: white;
+            color: black;
+        }
+
+        .logoname {
+            display: flex;
+            padding: 10px;
+        }
+
+        .logoname img {
+            height: 35px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .logoname p {
+            font-family: 'Tilt Prism', cursive;
+            font-size: 30px;
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .menu ul {
+            display: flex;
+            margin: 0px;
+            font-family: 'Titan One', cursive;
+            font-size: 20px;
+            padding: 0;
+            float: right;
+            list-style: none;
+        }
+
+        .menu li {
+            display: inline;
+            margin: 0px 20px 0px 0px;
+        }
+
+        .menu a {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            /* text-align: center; */
+            color: black;
+        }
+
+        .menu a:hover {
+            /* //color:black;
+            //background-color: white; */
+            text-decoration: underline;
+            text-decoration-color: black;
+            text-decoration-thickness: 3px;
+        }
+
+
+        /* dark mode */
+
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .dark-mode {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        #toggle-button {
+            padding: 10px 20px;
+            font-size: 12px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            /* position: absolute; */
+            right: 10px;
+            top: 12px;
+        }
+
+        #toggle-button:hover {
+            background-color: #0d8bf0;
+        }
+
+        .dark-mode #toggle-button {
+            background-color: #555;
+        }
+
+        .dark-mode #toggle-button:hover {
+            background-color: #333;
+        }
+
+        /* text adjacement */
+
+
+        .textadj button {
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            background-color: #ea8730;
+            color: azure;
+            height: 25px;
+            width: 25px;
+            border-radius: 6px;
+        }
+
+        /* top-buton */
+
+
+        .topbtn {
+            position: fixed;
+            bottom: 20px;
+            right: 4px;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            font-weight: bold;
+            /* color: white; */
+            font-size: 25px;
+            /* box-shadow: 0px 2px 6px black; */
+            background-color: #e19b18;
+        }
+
+        .topbtn:hover {
+            box-shadow: 0px 3px 14px #e19b18;
+            background-color: #edab31;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 60px 0;
+        }
+        
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .footersec {
+            flex-basis: 30%;
+            margin-bottom: 30px;
+        }
+        
+        .footersec h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .footersec p {
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
+        .bottom{
+            display: flex;
+            justify-content: center;
+        }
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap
+            ||Audiowide&Righteous&display&Alfa+Slab+One&Titan+One&display|Bruno+Ace+SC&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+</head>
+
+<body>
+    <div class="cont">
+        <div class="logoname">
+            <img
+                src="https://static.vecteezy.com/system/resources/previews/007/085/454/non_2x/pkr-letter-logo-design-on-black-background-pkr-creative-initials-letter-logo-concept-pkr-letter-design-vector.jpg">
+            <p>PKR</p>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+
+                <li><a href="location.html" class="loc">Locations<sup
+                            style="color:white;background-color: rgb(232, 29, 73);border-radius: 5px;font-size: 14px;"><small>New</small></sup>
+
+                </a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li title="play puzzle Game"><a href="game.html">Game</a></li>
+
+                
+                <li><div class="textadj">
+                    <button id="increase">A<sup>+</sup></button>
+                    <button id="decrease">A<sup>-</sup></button>
+            
+                </div></li>
+                <li><button id="toggle-button" onclick="toggleMode()">Toggle</button></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    
+    <button class="topbtn" id="Btn" title="Go to top">&#8593;</button>
+    <script>
+        let btn = document.querySelector('.topbtn');
+        btn.addEventListener('click', () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        })
+    </script>
+    <script>
+        let increaseButton = document.getElementById('increase');
+        let decreaseButton = document.getElementById('decrease');
+
+        let allElements = document.querySelectorAll('*');
+
+
+
+        increaseButton.addEventListener('click', () => {
+
+            for (let i = 0; i < allElements.length; i++) {
+                let font = window.getComputedStyle(allElements[i]).getPropertyValue("font-size");
+                font = parseFloat(font);
+                font++;
+                allElements[i].style.fontSize = font + 'px';
+            }
+        });
+
+        decreaseButton.addEventListener('click', () => {
+
+            for (let i = 0; i < allElements.length; i++) {
+                let font = window.getComputedStyle(allElements[i]).getPropertyValue("font-size");
+                font = parseFloat(font);
+                font--;
+                allElements[i].style.fontSize = font + 'px';
+            }
+        });
+
+    </script>
+
+    <script>
+        let tbtn=document.getElementById('toggle-button');
+        function toggleMode() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+
+            // Store the current mode preference
+            var modePreference = body.classList.contains("dark-mode") ? "dark" : "light";
+            localStorage.setItem("modePreference", modePreference);
+               
+            tbtn.innerHTML=((modePreference=='dark')?"Light":"Dark" )+" Mode";
+        }
+
+        // Apply the saved mode preference on page load
+        window.onload = function () {
+            var modePreference = localStorage.getItem("modePreference");
+            if (modePreference === "dark") {
+                document.body.classList.add("dark-mode");
+                
+            } else {
+                document.body.classList.remove("dark-mode");
+
+            }
+            tbtn.innerHTML=((modePreference=='dark')?"Light":"Dark" )+" Mode";
+
+
+        };
+
+    </script>
+
+    
+
+    <div class="cont2">
+        <div class="lft">
+            <p class="p1">Hi, I am</p>
+            <p class="p2">Kuldip Parmar </p>
+            <span class="p3">And I am specialize in ,</span>
+
+            <span class="p4 multiple-text">
+            </span>
+        </div>
+
+        <div class="rgt">
+            <img id="image" src="pr.jpg">
+            <video src="intro.mp4" id="video" controls autoplay muted></video>
+        </div>
+    </div>
+    <br><br><br> <br>
+    <hr>
+
+    <h2 style="margin:30px;font-family: 'Bruno Ace SC', cursive;">Explore this Articles
+    </h2>
+    <div class="articles ">
+        <div class="card ">
+            <img src=https://d3m1rm8xuevz4q.cloudfront.net/wp-content/uploads/2022/10/HTML-Accessibility.png
+                alt="Card image ">
+            <div class="card-body ">
+                <h2 class="card-title ">Accessibility and HTML</h2>
+                <p class="card-text ">Many visually-impaired users browse the Internet with the use of a screen reader.
+                    In this article, you'll learn about various ways to make your content accessible to
+                    visually-impaired or blind users.</p>
+                <a href="https://www.codecademy.com/article/accessibility-and-html " class="btn ">Read more</a>
+            </div>
+        </div>
+        <div class="card ">
+            <img src=https://miro.medium.com/v2/resize:fit:1400/0*znAb7WCSMKpkDv5i alt="Card image ">
+            <div class="card-body ">
+                <h2 class="card-title ">Additional Important Java Topics</h2>
+                <p class="card-text ">Learn about a few important topics in Java that supplement the information covered
+                    in our Learn Java course.</p>
+                <a href="https://www.codecademy.com/article/additional-important-java-topics" class="btn ">Read more</a>
+            </div>
+        </div>
+        <div class="card ">
+            <img src="https://assets.datacamp.com/production/tracks/4594/badges/original/Data_Analyst_with_SQL_Server.png?1622032316" alt="Card image ">
+            <div class="card-body ">
+                <h2 class="card-title ">Analyze Data with SQL Change Log</h2>
+                <p class="card-text ">Check out what's new in Analyze Data with SQL</p>
+                <a href="https://www.codecademy.com/article/change-log-analyze-data-with-sql-path " class="btn ">Read more</a>
+            </div>
+        </div>
+
+    </div>
+    <br>
+
+
+
+
+    <!--  songs - music -->
+    <hr>
+    <h2 style="margin:30px;font-family: 'Bruno Ace SC', cursive;">Listen My Favorite Songs
+    </h2>
+    <div class="articles ">
+        <div class="card ">
+            <img src=https://img.wynk.in/unsafe/250x250/filters:no_upscale():strip_exif():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/srch_universalmusic/music/update/00602448475596_20220826000727783/1661476851/srch_universalmusic_00602448475596-NGA3B2214021.jpg
+                alt="Card image ">
+            <div class="card-body ">
+                <h2 class="card-title ">Calm Down</h2>
+                <p class="card-text ">Rema, Selena Gomez - Calm Down</p>
+                <audio controls>
+                    <source src="realize.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+            </div>
+        </div>
+        <div class="card ">
+            <img src=https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/srch_sonymusic/music/A10301A00047823067_20220414160038430/1649946011/srch_sonymusic_A10328E0010305259O.jpg
+                alt="Card image ">
+            <div class="card-body ">
+                <h2 class="card-title ">The Drum</h2>
+                <p class="card-text ">The Drum</p>
+                <audio controls>
+                    <source src="relax.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+            </div>
+        </div>
+        <div class="card ">
+            <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/wynk-music-cms/srch_wmg/20230310082158737/5054197602184/1678437924863/resources/5054197602184.jpg"
+                alt="Card image ">
+            <div class="card-body ">
+                <h2 class="card-title ">Maan Meri Jaan (Afterlife)</h2>
+                <p class="card-text ">King , Nick Jones</p>
+                <audio controls>
+                    <source src="piano.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+            </div>
+        </div>
+
+    </div>
+    <br><br<br>
+    <footer>
+        <div class="footer">
+            <div class="footersec">
+                <h2>About me</h2>
+                <p>I am a competitive coder and web developer with a passion for solving complex problems and crafting elegant solutions. Proficient in various programming languages and frameworks, I enjoy the thrill of coding contests and the creativity of web development</p>
+            </div>
+            <div class="footersec">
+                <h2>Contact me</h2>
+                <p>Email: kuldiprparmar9759@gmail.com</p>
+                <p>Phone: 8200470402</p>
+            </div>
+
+        </div>
+        <div class="bottom">
+            <p>&copy; 2023 PKR. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    
+</script>
+<script>const imageElement = document.getElementById("image");
+    const videoElement = document.getElementById("video");
+    
+    function displayImage() {
+      imageElement.style.display = "block";
+      videoElement.style.display = "none";
+      
+      setTimeout(playVideo, 6000); // Display image for 3 seconds and then play video
+    }
+    
+    function playVideo() {
+      imageElement.style.display = "none";
+      videoElement.style.display = "block";
+      videoElement.play();
+    }
+    
+    videoElement.addEventListener("ended", function() {
+      setTimeout(displayImage, 100); // Display image after 1 second when video ends
+    });
+    
+    displayImage(); // Initial call to start with the image
+
+    </script>
+    <script>
+        var typed = new Typed(".multiple-text", {
+            strings: ["Software Devlopment ", "Video Editing", "Web Devlopment ", "Problem Solving"],
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 1000,
+            loop: true
+        });
+    </script>
+    <br>
+</body>
+
+</html>

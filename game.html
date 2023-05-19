@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .cont2 {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            border-collapse: collapse;
+            
+        }
+        .cont2 td{
+         
+          border:2px solid rgb(149, 140, 140);
+        }
+        
+
+        
+        .whitebox {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 0;
+            padding: 0;
+            object-fit: fill;
+            overflow: visible;
+        }
+        .images{
+            display: flex;
+            justify-content: space-around;
+        }
+        .images img {
+            padding: 0;
+            margin: 0;
+            max-width: 100%;
+            max-height: 100%;
+            height: 100px;
+            width: 200px;
+            border: 1px solid black;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .images img.invisible {
+            display: none;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+        .overlay-message {
+            background-color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        #tit{
+            display: flex;
+            justify-content: center;
+        }
+        .restart{
+          display: flex;
+          justify-content: center;
+          margin:12px ;
+
+        }
+        .restartbtn{
+            background-color:rgb(225, 154, 68);
+            color: aliceblue;
+            border-radius: 12px;
+            border: inset;
+            height:30px;
+            width: 100px;
+            z-index: 1000;
+        }
+        .restartbtn:hover{
+          background-color:rgb(163, 114, 40) ;
+          box-shadow: 0px 2px 8px rgb(248, 194, 86);
+        }
+        .restartbtn:focus{
+          border:none;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            /* opacity: 0.5; */
+        }
+
+        .cont {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 4px;
+            background-color: white;
+            color: black;
+        }
+
+        .logoname {
+            display: flex;
+            padding: 10px;
+        }
+
+        .logoname img {
+            height: 35px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .logoname p {
+            font-family: 'Tilt Prism', cursive;
+            font-size: 30px;
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .menu ul {
+            display: flex;
+            margin: 0px;
+            font-family: 'Titan One', cursive;
+            font-size: 20px;
+            padding: 0;
+            float: right;
+            list-style: none;
+        }
+
+        .menu li {
+            display: inline;
+            margin: 0px 20px 0px 0px;
+        }
+
+        .menu a {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            /* text-align: center; */
+            color: black;
+        }
+
+        .menu a:hover {
+            /* //color:black;
+            //background-color: white; */
+            text-decoration: underline;
+            text-decoration-color: black;
+            text-decoration-thickness: 3px;
+        }
+
+
+        /* dark mode */
+
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .dark-mode {
+            background-color: #000000;
+            color: #ffffff;
+
+        }
+
+        #toggle-button {
+            padding: 10px 20px;
+            font-size: 12px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            /* position: absolute; */
+            right: 10px;
+            top: 12px;
+        }
+
+        #toggle-button:hover {
+            background-color: #0d8bf0;
+        }
+
+        .dark-mode #toggle-button {
+            background-color: #555;
+        }
+
+        .dark-mode #toggle-button:hover {
+            background-color: #333;
+        }
+
+        /* text adjacement */
+
+
+        .textadj button {
+            padding: 0;
+            margin: 0;
+            background-color: #ea8730;
+            color: azure;
+            height: 25px;
+            width: 25px;
+            border-radius: 6px;
+        }
+        .topbtn {
+            position: fixed;
+            bottom: 20px;
+            right: 4px;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            font-weight: bold;
+            /* color: white; */
+            font-size: 25px;
+            /* box-shadow: 0px 2px 6px black; */
+            background-color: #e19b18;
+        }
+
+        .topbtn:hover {
+            box-shadow: 0px 3px 14px #e19b18;
+            background-color: #edab31;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <div class="cont">
+    <div class="logoname">
+        <img
+            src="https://static.vecteezy.com/system/resources/previews/007/085/454/non_2x/pkr-letter-logo-design-on-black-background-pkr-creative-initials-letter-logo-concept-pkr-letter-design-vector.jpg">
+        <p>PKR</p>
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+
+            <li><a href="location.html" class="loc">Locations<sup
+                        style="color:white;background-color: rgb(232, 29, 73);border-radius: 5px;font-size: 14px;"><small>New</small></sup>
+
+                </a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li title="play puzzle Game"><a href="game.html">Game</a></li>
+            
+            <li>
+                <div class="textadj">
+                    <button id="increase">A<sup>+</sup></button>
+                    <button id="decrease">A<sup>-</sup></button>
+
+                </div>
+            </li>
+            <li><button id="toggle-button" onclick="toggleMode()">Toggle</button></li>
+        </ul>
+    </div>
+</div>
+<div>
+
+</div>
+
+<button class="topbtn" id="Btn" title="Go to top">&#8593;</button>
+<script>
+    let btn = document.querySelector('.topbtn');
+    btn.addEventListener('click', () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    })
+</script>
+<script>
+    let increaseButton = document.getElementById('increase');
+    let decreaseButton = document.getElementById('decrease');
+
+    let allElements = document.querySelectorAll('*');
+
+
+
+    increaseButton.addEventListener('click', () => {
+
+        for (let i = 0; i < allElements.length; i++) {
+            let font = window.getComputedStyle(allElements[i]).getPropertyValue("font-size");
+            font = parseFloat(font);
+            font++;
+            allElements[i].style.fontSize = font + 'px';
+        }
+    });
+
+    decreaseButton.addEventListener('click', () => {
+
+        for (let i = 0; i < allElements.length; i++) {
+            let font = window.getComputedStyle(allElements[i]).getPropertyValue("font-size");
+            font = parseFloat(font);
+            font--;
+            allElements[i].style.fontSize = font + 'px';
+        }
+    });
+
+</script>
+
+<script>
+    let tbtn = document.getElementById('toggle-button');
+    function toggleMode() {
+        var body = document.body;
+        body.classList.toggle("dark-mode");
+
+        // Store the current mode preference
+        var modePreference = body.classList.contains("dark-mode") ? "dark" : "light";
+        localStorage.setItem("modePreference", modePreference);
+
+        tbtn.innerHTML = ((modePreference == 'dark') ? "Light" : "Dark") + " Mode";
+    }
+
+    // Apply the saved mode preference on page load
+    window.onload = function () {
+        var modePreference = localStorage.getItem("modePreference");
+        if (modePreference === "dark") {
+            document.body.classList.add("dark-mode");
+           
+
+        } else {
+            document.body.classList.remove("dark-mode");
+
+        }
+        tbtn.innerHTML = ((modePreference == 'dark') ? "Light" : "Dark") + " Mode";
+
+
+    };
+
+</script>
+    <div id="tit">
+        <h2>Jig-Saw Puzzle Game</h2>
+    </div>
+    <table class="cont2">
+        <tr>
+            <td class="whitebox"></td>
+            <td class="whitebox"></td>
+        </tr>
+        <tr>
+            <td class="whitebox"></td>
+            <td class="whitebox"></td>
+        </tr>
+    </table>
+    <br><br>
+    <div class="images">
+        <img src="22.webp" draggable="true">
+        <img src="12.webp" draggable="true">
+        <img src="21.webp" draggable="true">
+        <img src="11.webp" draggable="true">
+    </div>
+
+    <div id="overlay" class="overlay">
+        <div id="overlay-message" class="overlay-message"></div>
+    </div>
+    <div class="restart">
+      <button type="button" class="restartbtn" id="resstart">Restart</button>
+    </div>
+    <script>
+        const pieces = document.querySelectorAll('img');
+        const whiteBoxes = document.querySelectorAll('.whitebox');
+        const overlay = document.getElementById('overlay');
+        const overlayMessage = document.getElementById('overlay-message');
+        let activePiece = null;
+    
+        pieces.forEach(piece => {
+          piece.addEventListener('dragstart', dragStart);
+          piece.addEventListener('dragend', dragEnd);
+        });
+    
+        whiteBoxes.forEach(whiteBox => {
+          whiteBox.addEventListener('dragover', dragOver);
+          whiteBox.addEventListener('dragenter', dragEnter);
+          whiteBox.addEventListener('dragleave', dragLeave);
+          whiteBox.addEventListener('drop', dragDrop);
+        });
+    
+        function dragStart() {
+          activePiece = this;
+          setTimeout(() => this.classList.add('invisible'), 0);
+        }
+    
+        function dragEnd() {
+          activePiece = null;
+          this.classList.remove('invisible');
+        }
+    
+        function dragOver(e) {
+          e.preventDefault();
+        }
+    
+        function dragEnter(e) {
+          e.preventDefault();
+          this.classList.add('hovered');
+        }
+    
+        function dragLeave() {
+          this.classList.remove('hovered');
+        }
+    
+        function dragDrop() {
+          this.classList.remove('hovered');
+          this.appendChild(activePiece);
+          checkForWin();
+        }
+    
+        function checkForWin() {
+          const whiteBoxes = document.querySelectorAll('.whitebox');
+          const positions = [
+            { row: 0, col: 0, piece: '11' },
+            { row: 1, col: 1, piece: '22' },
+            { row: 0, col: 1, piece: '12' },
+            { row: 1, col: 0, piece: '21' }
+          ];
+    
+          let win = true;
+            let win2=true;
+          positions.forEach(position => {
+            const whiteBox = whiteBoxes[position.row * 2 + position.col];
+            const img = whiteBox.querySelector('img');
+    
+            if (!img || img.getAttribute('src') !== `${position.piece}.webp`) {
+              win = false;
+              if(!img) {
+                win2 = false;
+            }
+            }
+          });
+          
+          if (win) {
+            showOverlay('Congratulations! You Win!');
+          }
+          else if (!win && win2) {
+            showOverlay('play again');
+          }
+        }
+    
+        function showOverlay(message) {
+          overlayMessage.textContent = message;
+          overlay.style.display = 'flex';
+        }
+
+    
+    
+        function hideOverlay() {
+          overlay.style.display = 'none';
+        }
+    
+        function startGame() {
+          hideOverlay();
+        }
+    
+        function endGame() {
+          showOverlay('Game Over!');
+        }
+    
+        window.addEventListener('load', startGame);
+        const restartButton = document.querySelector('.restartbtn');
+        restartButton.addEventListener('click', ()=>{
+          location.reload();
+
+        });
+      </script>
+</body>
+
+</html>

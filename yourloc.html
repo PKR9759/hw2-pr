@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .ltlg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #map {
+            height: 500px;
+            width: 80%;
+            margin: auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        p {
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .topbtn {
+            position: fixed;
+            bottom: 20px;
+            right: 4px;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            font-weight: bold;
+            /* color: white; */
+            font-size: 25px;
+            /* box-shadow: 0px 2px 6px black; */
+            background-color: #e19b18;
+        }
+
+        .topbtn:hover {
+            box-shadow: 0px 3px 14px #e19b18;
+            background-color: #edab31;
+        }
+
+        .ltlg button {
+            background-color: hsl(219, 77%, 47%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            /* opacity: 0.5; */
+        }
+
+        .cont {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 4px;
+            background-color: white;
+            color: black;
+        }
+
+        .logoname {
+            display: flex;
+            padding: 10px;
+        }
+
+        .logoname img {
+            height: 35px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .logoname p {
+            font-family: 'Tilt Prism', cursive;
+            font-size: 30px;
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .menu ul {
+            display: flex;
+            margin: 0px;
+            font-family: 'Titan One', cursive;
+            font-size: 20px;
+            padding: 0;
+            float: right;
+            list-style: none;
+        }
+
+        .menu li {
+            display: inline;
+            margin: 0px 20px 0px 0px;
+        }
+
+        .menu a {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            /* text-align: center; */
+            color: black;
+        }
+
+        .menu a:hover {
+            /* //color:black;
+            //background-color: white; */
+            text-decoration: underline;
+            text-decoration-color: black;
+            text-decoration-thickness: 3px;
+        }
+
+
+        /* dark mode */
+
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .dark-mode {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        #toggle-button {
+            padding: 10px 20px;
+            font-size: 12px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            /* position: absolute; */
+            right: 10px;
+            top: 12px;
+        }
+
+        #toggle-button:hover {
+            background-color: #0d8bf0;
+        }
+
+        .dark-mode #toggle-button {
+            background-color: #555;
+        }
+
+        .dark-mode #toggle-button:hover {
+            background-color: #333;
+        }
+
+        /* text adjacement */
+
+
+        .textadj button {
+            padding: 0;
+            margin: 0;
+            background-color: #ea8730;
+            color: azure;
+            height: 25px;
+            width: 25px;
+            border-radius: 6px;
+        }
+
+        /* top-buton */
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="cont">
+        <div class="logoname">
+            <img
+                src="https://static.vecteezy.com/system/resources/previews/007/085/454/non_2x/pkr-letter-logo-design-on-black-background-pkr-creative-initials-letter-logo-concept-pkr-letter-design-vector.jpg">
+            <p>PKR</p>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+
+                <li><a href="location.html" class="loc">Locations<sup
+                            style="color:white;background-color: rgb(232, 29, 73);border-radius: 5px;font-size: 14px;"><small>New</small></sup>
+
+                    </a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li title="play puzzle Game"><a href="game.html">Game</a></li>
+
+                <li>
+                    <div class="textadj">
+                        <button id="increase">A<sup>+</sup></button>
+                        <button id="decrease">A<sup>-</sup></button>
+
+                    </div>
+                </li>
+                <li><button id="toggle-button" onclick="toggleMode()">Toggle</button></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+
+    </div>
+
+    <button class="topbtn" id="Btn" title="Go to top">&#8593;</button>
+    <script>
+        let btn = document.querySelector('.topbtn');
+        btn.addEventListener('click', () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        })
+    </script>
+    <script>
+        let increaseButton = document.getElementById('increase');
+        let decreaseButton = document.getElementById('decrease');
+
+        let allElements = document.querySelectorAll('*');
+
+
+
+        increaseButton.addEventListener('click', () => {
+
+            for (let i = 0; i < allElements.length; i++) {
+                let font = window.getComputedStyle(allElements[i]).getPropertyValue("font-size");
+                font = parseFloat(font);
+                font++;
+                allElements[i].style.fontSize = font + 'px';
+            }
+        });
+
+        decreaseButton.addEventListener('click', () => {
+
+            for (let i = 0; i < allElements.length; i++) {
+                let font = window.getComputedStyle(allElements[i]).getPropertyValue("font-size");
+                font = parseFloat(font);
+                font--;
+                allElements[i].style.fontSize = font + 'px';
+            }
+        });
+
+    </script>
+
+    <script>
+        let tbtn = document.getElementById('toggle-button');
+        function toggleMode() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+
+            // Store the current mode preference
+            var modePreference = body.classList.contains("dark-mode") ? "dark" : "light";
+            localStorage.setItem("modePreference", modePreference);
+
+            tbtn.innerHTML = ((modePreference == 'dark') ? "Light" : "Dark") + " Mode";
+        }
+
+        // Apply the saved mode preference on page load
+        window.onload = function () {
+            var modePreference = localStorage.getItem("modePreference");
+            if (modePreference === "dark") {
+                document.body.classList.add("dark-mode");
+
+            } else {
+                document.body.classList.remove("dark-mode");
+
+            }
+            tbtn.innerHTML = ((modePreference == 'dark') ? "Light" : "Dark") + " Mode";
+
+
+        };
+
+    </script>
+    <div style="display: flex;justify-content: center;">
+        <h2>Trace Your Location</h2>
+    </div>
+    <div>
+        
+        <div>
+            <div class="ltlg">
+                <p>Latitude :</p>
+                <p id="p1"></p>
+
+                <p>Longitude:</p>
+                <p id="p2"></p>
+
+                <br>
+                <button name=" getloc " title="click to get Your location " onclick="maping() ">Get location</button>
+            </div>
+            <br><br>
+            <div id="map">
+            </div>
+        </div>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmgZnzZRlE76HzXQmqrJrSvKVKdSWxJnM&callback=initMap"
+            async defer></script>
+        <script>
+            let p1 = document.getElementById("p1");
+            let p2 = document.getElementById("p2");
+            var map;
+
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+
+                    zoom: 7
+                });
+            }
+
+            function maping() {
+                navigator.geolocation.getCurrentPosition((ps) => {
+                    p1.innerHTML = ps.coords.latitude;
+                    p2.innerHTML = ps.coords.longitude;
+                    var pos = {
+                        lat: ps.coords.latitude,
+                        lng: ps.coords.longitude
+                    }
+                    map.setCenter(pos);
+                    var mark = new google.maps.Marker({
+                        position: pos,
+                        map: map,
+                        title: "Your Location ",
+                        Animation: google.maps.Animation.BOUNCE,
+                    });
+                });
+            }
+        </script>
+</body>
+
+</html>
