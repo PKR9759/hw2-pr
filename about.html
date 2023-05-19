@@ -1,220 +1,815 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+  /* styles.css */
 
-<head>
-    <style>
-        body {
-            margin: 0;
+  /* Global Styles */
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Header */
+
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 30px;
+  }
+
+  /* About Section */
+  .aboutdesc p {
+    color:#000000;
+  }
+  .about-section {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+  }
+
+  h2 {
+    color: #333;
+    font-size: 24px;
+  }
+
+  .about-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .about-image {
+    flex: 0 0 200px;
+    margin-right: 20px;
+  }
+
+  .about-image img {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  /* Skills Section */
+
+  .skills-section {
+    background-color: #fff;
+    padding: 40px 0;
+  }
+
+  .skills-section h2 {
+    color: #333;
+    font-size: 24px;
+  }
+
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .skills-container p,.skills-container h3{
+      color: #000000;
+  }
+
+  .skill-card {
+    flex: 0 0 calc(50% - 20px);
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .skill-card img {
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  .skill-card h3 {
+    margin: 0 20px;
+    font-size: 18px;
+
+  }
+
+  .skill-card p {
+    margin: 10px 0 0;
+    font-size: 14px;
+  }
+
+  /* Contact Section */
+
+  .contact-section {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+  }
+
+  .contact-section h2 {
+    color: #333;
+    font-size: 24px;
+  }
+
+  .contact-section p {
+    margin-bottom: 20px;
+  }
+
+  .contact-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-list img {
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  .contact-list a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  /* Footer */
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .badge-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .badge-item {
+    margin: 20px;
+    text-align: center;
+  }
+
+  .badge-item img {
+    max-width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .badge-item h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #333;
+  }
+
+  .competitions,
+  .solutions {
+    margin-top: 40px;
+  }
+
+  .competitions li,
+  .solutions li {
+    margin-bottom: 10px;
+    color: #555;
+  }
+
+  .competitions p,
+  .solutions p {
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    /* opacity: 0.5; */
+  }
+
+  .cont {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 4px;
+    background-color: white;
+    color: black;
+  }
+
+  .logoname {
+    display: flex;
+    padding: 10px;
+  }
+
+  .logoname img {
+    height: 35px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  .logoname p {
+    font-family: 'Tilt Prism', cursive;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .menu ul {
+    display: flex;
+    margin: 0px;
+    font-family: 'Titan One', cursive;
+    font-size: 20px;
+    padding: 0;
+    float: right;
+    list-style: none;
+  }
+
+  .menu li {
+    display: inline;
+    margin: 0px 20px 0px 0px;
+  }
+
+  .menu a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* text-align: center; */
+    color: black;
+  }
+
+  .menu a:hover {
+    /* //color:black;
+            //background-color: white; */
+    text-decoration: underline;
+    text-decoration-color: black;
+    text-decoration-thickness: 3px;
+  }
+
+
+  /* dark mode */
+
+  .light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  #toggle-button {
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* position: absolute; */
+    right: 10px;
+    top: 12px;
+  }
+
+  #toggle-button:hover {
+    background-color: #0d8bf0;
+  }
+
+  .dark-mode #toggle-button {
+    background-color: #555;
+  }
+
+  .dark-mode #toggle-button:hover {
+    background-color: #333;
+  }
+
+  /* text adjacement */
+
+
+  .textadj button {
+    padding: 0;
+    margin: 0;
+    background-color: #ea8730;
+    color: azure;
+    height: 25px;
+    width: 25px;
+    border-radius: 6px;
+  }
+
+  .topbtn {
+    position: fixed;
+    bottom: 20px;
+    right: 4px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    font-weight: bold;
+    /* color: white; */
+    font-size: 25px;
+    /* box-shadow: 0px 2px 6px black; */
+    background-color: #e19b18;
+  }
+
+  .topbtn:hover {
+    box-shadow: 0px 3px 14px #e19b18;
+    background-color: #edab31;
+  }
+
+ 
+
+  .tit {
+    display: flex;
+    justify-content: center;
+  }
+  body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .faq{
+      background-color: white;
+      margin:12px 12px;
+    }
+    
+    label {
+        display: block;
+        text-align: left;
+        cursor: pointer;
+        background-color:rgb(238, 240, 242);
+        color: rgb(23, 22, 22);
+        padding: 12px 12px;
+        margin: 1px;
+        
+        
+    }
+    
+    .content {
+        color: black;
+        background-color: white;
+        transition: max-height 0.s ease-out;
+        max-height: 0;
+        overflow: hidden;
+        font-size: 15px;
+        padding:0 12px;
+    }
+    
+    .check {
+        display: none;
+        transition: max-height 0.3s ease-out;
+    }
+    
+    .check:checked~.content {
+        max-height: 100%;
+    }
+    .cont2{
+      display: flex;
+      justify-content:center;
+            /* width: 90vw;
+            height: 96vh; */
+            position: relative;
+            overflow-x: hidden;
+            transform: all 0.5s;
+            
             padding: 0;
-            background-color: aliceblue;
-            box-sizing: border-box;
+            margin: 30px 12px;
+            height:500px;
+            width:1050px;
         }
         
-        .cont {
-            display: flex;
-            /* height: 100vh; */
-            /* width:100vw; */
-            /* padding:5%;
-            margin:100px; */
+        .im {
+            width: 98%;
+            height: 100%;
+            position: absolute;
+            overflow-x: hidden;
         }
         
         .lft {
-            padding: 0;
-            float: left;
-            width: 60%;
-        }
-        
-        .lft p {
-            margin-top: 20px;
-            margin: 0;
-            padding: 0;
-            margin-left: 20px;
-        }
-        
-        .p1 {
-            font-family: 'Righteous', cursive;
-            font-size: 50px;
-            font-family: 'Alfa Slab One', cursive;
-        }
-        
-        .p2 {
-            font-size: 70px;
-            color: rgb(216, 144, 49);
-            font-family: 'Alfa Slab One', cursive;
-        }
-        
-        .p3 {
-            font-family: 'Righteous', cursive;
-            font-size: 20px;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 50%;
+            left: 10px;
         }
         
         .rgt {
-            float: right;
-            width: 40%;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 50%;
+            right: 10px;
         }
-        
-        .rgt img {
-            /* height:100%; */
-            width: 100%;
-            border-radius: 50%;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .slide {
-            height: 100vh;
-            width: 100%;
-        }
-        
-        .card {
-            width: 300px;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .card-body {
-            padding: 20px;
-        }
-        
-        .card-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .card-text {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #e19b18;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        
-        .articles {
-            display: flex;
-            justify-content: space-around;
-        }
-    </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Section</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap
-            ||Audiowide&Righteous&display&Alfa+Slab+One&Titan+One&display|Bruno+Ace+SC&display=swap" rel="stylesheet">
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <iframe class="inc" style=" border:none;" src="navbar.html" width="100%" height="100%"></iframe>
+  <!DOCTYPE html>
+  <html lang="en">
 
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
     <div class="cont">
-        <div class="lft">
-            <p class="p1">Hi, I am</p>
-            <p class="p2">Kuldip Parmar </p>
-            <p class="p3">Software Devloper, ML Engineer, Web Devloper, Data Scientist
+      <div class="logoname">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/007/085/454/non_2x/pkr-letter-logo-design-on-black-background-pkr-creative-initials-letter-logo-concept-pkr-letter-design-vector.jpg">
+        <p>PKR</p>
+      </div>
+
+      <div class="menu">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+
+          <li><a href="location.html" class="loc">Locations<sup
+                style="color:white;background-color: rgb(232, 29, 73);border-radius: 5px;font-size: 14px;"><small>New</small></sup>
+
+            </a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li title="play puzzle Game"><a href="game.html">Game</a></li>
+
+          <li>
+            <div class="textadj">
+              <button id="increase">A<sup>+</sup></button>
+              <button id="decrease">A<sup>-</sup></button>
+
+            </div>
+          </li>
+          <li><button id="toggle-button" onclick="toggleMode()">Toggle</button></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+
+    </div>
+
+    <button class="topbtn" id="Btn" title="Go to top">&#8593;</button>
+    <script>
+      let btn = document.querySelector('.topbtn');
+      btn.addEventListener('click', () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      })
+    </script>
+    <script>
+      let increaseButton = document.getElementById('increase');
+      let decreaseButton = document.getElementById('decrease');
+
+      let allElements = document.querySelectorAll('*');
+
+
+
+      increaseButton.addEventListener('click', () => {
+
+        for (let i = 0; i < allElements.length; i++) {
+          let font = window.getComputedStyle(allElements[i]).getPropertyValue("font-size");
+          font = parseFloat(font);
+          font++;
+          allElements[i].style.fontSize = font + 'px';
+        }
+      });
+
+      decreaseButton.addEventListener('click', () => {
+
+        for (let i = 0; i < allElements.length; i++) {
+          let font = window.getComputedStyle(allElements[i]).getPropertyValue("font-size");
+          font = parseFloat(font);
+          font--;
+          allElements[i].style.fontSize = font + 'px';
+        }
+      });
+
+    </script>
+
+    <script>
+      let tbtn = document.getElementById('toggle-button');
+      function toggleMode() {
+        var body = document.body;
+        body.classList.toggle("dark-mode");
+
+        // Store the current mode preference
+        var modePreference = body.classList.contains("dark-mode") ? "dark" : "light";
+        localStorage.setItem("modePreference", modePreference);
+
+        tbtn.innerHTML = ((modePreference == 'dark') ? "Light" : "Dark") + " Mode";
+      }
+
+      // Apply the saved mode preference on page load
+      window.onload = function () {
+        var modePreference = localStorage.getItem("modePreference");
+        if (modePreference === "dark") {
+          document.body.classList.add("dark-mode");
+
+        } else {
+          document.body.classList.remove("dark-mode");
+
+        }
+        tbtn.innerHTML = ((modePreference == 'dark') ? "Light" : "Dark") + " Mode";
+
+
+      };
+
+    </script>
+    <header>
+      <h1>About Us</h1>
+    </header>
+
+    <main>
+      <section class="about-section">
+        <div class="container">
+          <h2>Welcome to My Portfolio!</h2>
+          <div class="about-content">
+            <div class="about-image">
+              <img src="pr.jpg" alt="Profile Picture">
+            </div>
+            <div class="aboutdesc">
+
+              <p>
+                Hi, I'm Kuldip R. Parmar , a passionate and competitive coder. I'm also an aspiring web developer, eager
+                to create innovative and user-friendly web experiences. I have a strong enthusiasm for problem-solving
+                and continually improving my skills in both coding and web development.
+              </p>
+              <p>
+                This portfolio website showcases my journey as a competitive coder and my progress as a web developer.
+                It includes a collection of my projects and achievements, demonstrating my dedication and growth in
+                these areas.
+              </p>
+              <p>
+                Through my projects, I aim to solve real-world problems and create impactful solutions. I'm excited to
+                leverage my coding skills and creativity to build engaging web applications that provide value to users.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-section">
+        <div class="container">
+          <h2>Skills</h2>
+          
+    
+        </div>
+        </section>
+    
+        <div class="cont2">
+          <img class="im" src="sl1.jpg" alt="img2">
+          <img class="im" src="sl22.jpg" alt="img3">
+          <img class="im" src="sl11.png" alt="img1">
+          <div class="btn">
+              <button class="lft">&#8249</button>
+              <button class="rgt">&#8250</button>
+          </div>
+        </div>
+        <script>
+            const imgs = document.querySelectorAll('.im');
+            let lbtn = document.querySelector('.lft');
+            let rbtn = document.querySelector('.rgt');
+    
+    
+            var index = 0;
+    
+            function slideTo(indexi) {
+    
+    
+                imgs[indexi].style.display = 'block';
+                for (let i = 0; i < 3; i++) {
+                    if (i != indexi) {
+                        imgs[i].style.display = 'none';
+                    }
+                }
+                index = indexi;
+            }
+    
+    
+    
+    
+    
+            lbtn.addEventListener('click', () => {
+                index--;
+                if (index < 0)
+                    index = 2;
+                slideTo(index);
+            });
+            rbtn.addEventListener('click', () => {
+                index++;
+                if (index > 2)
+                    index = 0;
+                slideTo(index);
+            });
+            setInterval(() => {
+    
+                index++;
+                if (index == 3)
+                    index = 0;
+                slideTo(index);
+    
+            }, 3000)
+        </script>
+          <div class="skills-container">
+            <div class="skill-card">
+              <img src="html.png" alt="HTML Icon">
+              <h3>HTML</h3>
+              <p>A markup language for creating web pages.</p>
+            </div>
+            <div class="skill-card">
+              <img src="css.png" alt="CSS Icon">
+              <h3>CSS</h3>
+              <p>A stylesheet language for styling web pages.</p>
+            </div>
+            <div class="skill-card">
+              <img src="js.png" alt="JavaScript Icon">
+              <h3>JavaScript</h3>
+              <p>A programming language for adding interactivity to web pages.</p>
+            </div>
+
+            <div class="skill-card">
+              <img src="php.png" alt="PHP Icon">
+              <h3>PHP</h3>
+              <p>A popular server-side scripting language.</p>
+            </div>
+            <div class="skill-card">
+              <img src="sql.png" alt="MySQL Icon">
+              <h3>MySQL</h3>
+              <p>A widely used relational database management system.</p>
+            </div>
+            <div class="skill-card">
+              <img src="c.png" alt="C Icon">
+              <h3>C</h3>
+              <p>A procedural programming language.</p>
+            </div>
+            <div class="skill-card">
+              <img src="c++.png" alt="C++ Icon">
+              <h3>C++</h3>
+              <p>A powerful object-oriented programming language.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="container">
+        <h2>Achievements</h2>
+        <ul class="badge-list">
+          <li class="badge-item">
+            <img
+              src="https://media.licdn.com/dms/image/C5622AQHHiRxtH7VsBQ/feedshare-shrink_2048_1536/0/1675948767479?e=1686787200&v=beta&t=LGmVBsbtRe9euH7yV0zlCELjM3Aa7QAqUP6KqllcjYo"
+              alt="Codechef Daily streak badge">
+            <h3>Codechef Daily streak badge</h3>
+          </li>
+          <li class="badge-item">
+            <img src="https://pbs.twimg.com/media/Ff5XjedUUAEXrz2?format=jpg&name=large"
+              alt="Codechef Problem solver Badge">
+            <h3>Codechef Problem solver Badge</h3>
+          </li>
+          <li class="badge-item">
+            <img src="https://hrcdn.net/fcore/assets/generated-badges/c_level_2_stars_3_linkedin-6e3b8b106d.png"
+              alt="Hackerrank c language Badge">
+            <h3>Hackerrank c language Badge</h3>
+          </li>
+          <li class="badge-item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmS4KvFR5dAqcMJJQNVRBEBPKqK8HhSMmxbid5ETqNJLoXY6Wc__SGzEXyK0C08q8arQc&usqp=CAU"
+              alt="Hackerrank c++ language Badge">
+            <h3>Hackerrank c++ language Badge</h3>
+          </li>
+        </ul>
+
+        <h3>Competitions:</h3>
+        <ul class="competitions">
+          <li>
+            <p>Attended 22+ Codechef starters Contests</p>
+          </li>
+          <li>
+            <p>Attended 20+ Hackerrank Contests</p>
+          </li>
+        </ul>
+
+        <h3>Solutions:</h3>
+        <ul class="solutions">
+          <li>
+            <p>Solved 200+ Hackerrank Coding problems</p>
+          </li>
+          <li>
+            <p>Solved 250+ Codechef Coding problems</p>
+          </li>
+          <li>
+            <p>Solved 35+ Leetcode Coding problems</p>
+          </li>
+        </ul>
+      </div>
+      <div class="faq">
+        <div class="tit">
+          <h2>FAQ's</h2>
+        </div>
+        <div class="ses">
+          <label for="sec1"> What are your areas of specialization or interest?</label>
+          <input type="checkbox" id="sec1" class="check">
+          <div class="content">
+            <p>While I have a general interest in AI, my current focus is on understanding the fundamental concepts and principles of artificial intelligence. I am intrigued by the potential of AI to enhance human capabilities and improve efficiency in various domains. Although I have not yet delved into machine learning specifically, I am eager to explore its applications and gain knowledge in this field. I believe that AI holds immense possibilities and I am excited to learn more about its advancements and how it can positively impact our society and everyday lives.</p>
+          </div>
+        </div>
+        <div class="ses">
+          <label for="sec2">Can you provide details about any specific projects or assignments you have completed?</label>
+          <input type="checkbox" id="sec2" class="check">
+          <div class="content">
+            <p>One of the notable projects I recently completed was the development of a website for a food-related business. The website aimed to showcase a wide variety of food items and provide a seamless ordering experience for customers. I worked closely with the client to understand their unique requirements and translate them into a visually appealing and user-friendly website. The website features an interactive menu where customers can explore different food options, view detailed descriptions and images of each dish, and place their orders online. I integrated a secure payment system to ensure a smooth and secure transaction process. Additionally, I implemented features such as user registration, customer reviews and ratings, and a responsive design that adapts to various screen sizes. It was a fulfilling project, and I enjoyed leveraging my web development skills to create a platform that enhances the online presence and user experience of the food business.</p>
+          </div>
+        </div>
+        <div class="ses">
+          <label for="sec3">What are your plans for continuous learning and professional development?</label>
+          <input type="checkbox" id="sec3" class="check">
+          <div class="content">
+            <p>As a dedicated professional, I believe in the importance of continuous learning and staying updated with the latest industry trends. Currently, I am focusing on expanding my knowledge in web development and honing my skills in data structures and algorithms (DSA). Additionally, I am exploring online resources, attending workshops, and participating in coding challenges to further strengthen my understanding of DSA.  Continuous learning is an integral part of my professional journey, and I am committed to staying curious, adaptable, and proactive in my pursuit of knowledge and skill development
             </p>
+          </div>
         </div>
+      </div>
 
-        <div class="rgt">
-            <img src="/proj/imag/pr.jpg">
-
-
+      </div>
+      <section class="contact-section">
+        <div class="container">
+          <h2>Contact Me</h2>
+          <p>If you have any inquiries or would like to discuss , feel free to get in touch with me:
+          </p>
+          <ul class="contact-list">
+            <li>
+              <img src="mail.png" alt="Email Icon">
+              <a href="gmail:kuldiprparmar9759@gmail.com">kuldiprparmar9759@gmail.com</a>
+            </li>
+            <li>
+              <img src="call.png" alt="Phone Icon">
+              <a href="tel:+1234567890">+918200470402</a>
+            </li>
+            <li>
+              <img src="link.png" alt="LinkedIn Icon">
+              <a href="https://www.linkedin.com/in/kuldip-rupsangbhai-parmar-6b9469247/">Kuldip Rupsangbhai Parmar</a>
+            </li>
+          </ul>
         </div>
-    </div>
-    <br><br><br> <br>
-    <div class="slide">
-        <iframe class="inc" style=" border:none;" src="slide2.html" width="100%" height="100%"></iframe>
-    </div>
-    <br><br>
-    <hr>
+      </section>
 
-
-
-    <!--  articles -->
-
-
-    <h2 style="margin:30px;font-family: 'Bruno Ace SC', cursive;">Explore this Articles
-    </h2>
-    <div class="articles ">
-        <div class="card ">
-            <img src=https://d3m1rm8xuevz4q.cloudfront.net/wp-content/uploads/2022/10/HTML-Accessibility.png alt="Card image ">
-            <div class="card-body ">
-                <h2 class="card-title ">Accessibility and HTML</h2>
-                <p class="card-text ">Many visually-impaired users browse the Internet with the use of a screen reader. In this article, you'll learn about various ways to make your content accessible to visually-impaired or blind users.</p>
-                <a href="https://www.codecademy.com/article/accessibility-and-html " class="btn ">Read more</a>
-            </div>
+      <footer>
+        <div class="container">
+          <p>&copy; 2023 PKR. All rights reserved.</p>
         </div>
-        <div class="card ">
-            <img src=https://miro.medium.com/v2/resize:fit:1400/0*znAb7WCSMKpkDv5i alt="Card image ">
-            <div class="card-body ">
-                <h2 class="card-title ">Additional Important Java Topics</h2>
-                <p class="card-text ">Learn about a few important topics in Java that supplement the information covered in our Learn Java course.</p>
-                <a href="https://www.codecademy.com/article/additional-important-java-topics" class="btn ">Read more</a>
-            </div>
-        </div>
-        <div class="card ">
-            <img src="https://journaldev.nyc3.digitaloceanspaces.com/2013/12/java8-features.png" alt="Card image ">
-            <div class="card-body ">
-                <h2 class="card-title ">Analyze Data with SQL Change Log</h2>
-                <p class="card-text ">Check out what's new in Analyze Data with SQL</p>
-                <a href="https://www.codecademy.com/article/change-log-analyze-data-with-sql-path " class="btn ">Read more</a>
-            </div>
-        </div>
+      </footer>
 
-    </div>
+  </body>
 
-    <br>
-
-
-
-
-    <!--  songs - music -->
-    <hr>
-    <h2 style="margin:30px;font-family: 'Bruno Ace SC', cursive;">Listen My Favorite Songs
-    </h2>
-    <div class="articles ">
-        <div class="card ">
-            <img src=https://img.wynk.in/unsafe/250x250/filters:no_upscale():strip_exif():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/srch_universalmusic/music/update/00602448475596_20220826000727783/1661476851/srch_universalmusic_00602448475596-NGA3B2214021.jpg
-                alt="Card image ">
-            <div class="card-body ">
-                <h2 class="card-title ">Calm Down</h2>
-                <p class="card-text ">Rema, Selena Gomez - Calm Down</p>
-                <a href="https://wynk.in/music/album/calm-down/um_00602448475596" class="btn ">Listen Here</a>
-            </div>
-        </div>
-        <div class="card ">
-            <img src=https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/srch_sonymusic/music/A10301A00047823067_20220414160038430/1649946011/srch_sonymusic_A10328E0010305259O.jpg alt="Card image ">
-            <div class="card-body ">
-                <h2 class="card-title ">The Drum</h2>
-                <p class="card-text ">The Drum</p>
-                <a href="https://wynk.in/music/album/the-drum/sm_196589078735" class="btn ">Listen Here</a>
-            </div>
-        </div>
-        <div class="card ">
-            <img src="https://img.wynk.in/unsafe/248x248/filters:no_upscale():strip_exif():format(webp)/http://s3.ap-south-1.amazonaws.com/wynk-music-cms/srch_wmg/20230310082158737/5054197602184/1678437924863/resources/5054197602184.jpg" alt="Card image ">
-            <div class="card-body ">
-                <h2 class="card-title ">Maan Meri Jaan (Afterlife)</h2>
-                <p class="card-text ">King , Nick Jones</p>
-                <a href="https://wynk.in/music/album/maan-meri-jaan-afterlife/wm_5054197602184 " class="btn ">Listen Here</a>
-            </div>
-        </div>
-
-    </div>
-
-    <br>
-    <hr>
-    <br></body>
-
-</html>
+  </html>
